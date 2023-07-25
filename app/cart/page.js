@@ -30,10 +30,10 @@ const Cart = () => {
                         >
                             <button
                                 className={
-                                    "rounded-sm bg-neutral text-white md:text-xl uppercase"
+                                    "rounded-md bg-neutral p-2 text-white md:text-xl uppercase"
                                 }
                             >
-                                Order some food
+                                Order some Product
                             </button>
                         </Link>
                     </div>
@@ -73,6 +73,7 @@ const Cart = () => {
                   </div>
     
                   <div className="mt-6 text-center">
+                    <Link href="/cart/checkout">
                     <button
                       type="button"
                       className="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
@@ -88,6 +89,7 @@ const Cart = () => {
                         <path d="M13 7l5 5m0 0l-5 5m5-5H6" />
                       </svg>
                     </button>
+                    </Link>
                   </div>
                 </div>
               </div>

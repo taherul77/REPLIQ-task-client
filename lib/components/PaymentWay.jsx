@@ -6,7 +6,7 @@ const PaymentWay = () => {
   return (
     <div>
      
-        <div className="container p-6 mx-auto space-y-8 text-center lg:pt-5 lg:space-y-4">
+        <div className="container p-6 mx-auto space-y-8 text-center lg:pt-10 lg:space-y-4">
           <Marquee>
             <div className="flex flex-wrap gap-20 justify-center lg:justify-between">
               <Image
@@ -39,12 +39,7 @@ const PaymentWay = () => {
                 src="https://i.ibb.co/m0NhwWq/unnamed-removebg-preview.png"
                 alt=""
               />
-              {/* <Image
-            height={72}
-            width={72}
-            src="https://i.ibb.co/CBD8T8q/islami-bank-bd-ltd-logo-AEF49-FEF88-seeklogo-com-removebg-preview.png"
-            alt=""
-          /> */}
+             
               <Image
                 height={72}
                 width={72}

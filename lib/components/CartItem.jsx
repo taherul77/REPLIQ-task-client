@@ -83,7 +83,7 @@ const CartItem = ({ item, refetch }) => {
               <p className="text-base font-semibold text-gray-900">
                 {name}
               </p>
-              <p className="mx-0 mt-1 mb-0 text-sm text-gray-400">{description}</p>
+              <p className="mx-0 mt-1 mb-0 text-sm line-clamp-2 text-gray-400">{description}</p>
             </div>
 
             <div className="mt-4 flex items-end justify-between sm:mt-0 sm:items-start sm:justify-end">

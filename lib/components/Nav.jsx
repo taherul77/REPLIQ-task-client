@@ -108,7 +108,7 @@ const Nav = () => {
               <div className="hidden lg:block dropdown dropdown-hover dropdown-end">
                 <label
                   tabIndex={0}
-                  className="rounded-full p-[2px] border-2 border-primary avatar ml-2 cursor-pointer"
+                  className="rounded-full p-[2px] border-2 border-white avatar ml-2 cursor-pointer"
                 >
                   <div className="w-6 md:w-8 rounded-full">
                     {currentUser?.photo && (
