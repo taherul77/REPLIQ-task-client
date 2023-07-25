@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Marquee from "react-fast-marquee";
 
-const Feture = () => {
+const PaymentWay = () => {
   return (
     <div>
      
@@ -77,4 +77,4 @@ const Feture = () => {
   );
 };
 
-export default Feture;
+export default PaymentWay;

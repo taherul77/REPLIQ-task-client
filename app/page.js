@@ -1,20 +1,20 @@
 import {  getProduct } from "@/lib/api/Index";
 import Banner from "@/lib/components/Banner";
-import Feture from "@/lib/components/Feture";
-import Gallery from "@/lib/components/Gallary";
+import Gallery from "@/lib/components/Gallery";
 import Product from "@/lib/components/Product";
 import SectionTitle from "@/lib/components/SectionTitle";
 import Wrapper from "@/lib/components/Wrapper";
 
 import React from "react";
+import PaymentWay from "@/lib/components/PaymentWay";
 
 const Home = async () => {
   const data = await getProduct();
 
   return (
-    <div className="bg-black">
+    <div>
       <Banner></Banner>
-      <Feture></Feture>
+      <PaymentWay></PaymentWay>
       <SectionTitle
           SubHeading={"OUR PRODUCT"}
           heading={"GALLERY"}
