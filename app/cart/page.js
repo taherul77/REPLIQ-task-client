@@ -4,10 +4,11 @@ import GetCart from '@/lib/cartHelper/getCart';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react'
+import calculateTotal from '@/lib/cartHelper/totalPrice';
 
 const Cart = () => {
   const { data, refetch } = GetCart();
-  // const { subtotal, shipping, tax, total } = calculateTotal(data);
+  const { subtotal, shipping,  total } = calculateTotal(data);
 
 
   return (
@@ -55,19 +56,19 @@ const Cart = () => {
     
                   <div className="mt-6 border-t border-b py-2">
                     <div className="flex items-center justify-between">
-                      <p className="text-sm text-gray-400">Subtotal</p>
-                      <p className="text-lg font-semibold text-gray-900">$399.00</p>
+                      <p className="text-sm text-gray-700">Subtotal</p>
+                      <p className="text-lg font-semibold text-gray-900">${subtotal}</p>
                     </div>
                     <div className="flex items-center justify-between">
-                      <p className="text-sm text-gray-400">Shipping</p>
-                      <p className="text-lg font-semibold text-gray-900">$8.00</p>
+                      <p className="text-sm text-gray-700">Shipping</p>
+                      <p className="text-lg font-semibold text-gray-900">${shipping}</p>
                     </div>
                   </div>
                   <div className="mt-6 flex items-center justify-between">
-                    <p className="text-sm font-medium text-gray-900">Total</p>
+                    <p className="text-sm font-bold text-gray-900">Total</p>
                     <p className="text-2xl font-semibold text-gray-900">
                       <span className="text-xs font-normal text-gray-400">USD</span>{" "}
-                      408.00
+                      {total}
                     </p>
                   </div>
     
