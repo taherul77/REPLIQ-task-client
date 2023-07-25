@@ -3,10 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
-
+import GetCart from "../helper/getCart";
 
 const Nav = () => {
   const { currentUser, logout } = useAuth();
+  const { data } = GetCart();
+
+  const cartQuantity = data?.length;
+
   const navItem = (
     <>
       <li>
@@ -100,76 +104,80 @@ const Nav = () => {
       <div className="navbar-end gap-4 mr-4">
         <nav className="contents">
           <ul className="ml-4 xl:w-48 flex items-center justify-end">
-          {currentUser ? (
-                        <div className="hidden lg:block dropdown dropdown-hover dropdown-end">
-                            <label
-                                tabIndex={0}
-                                className="rounded-full p-[2px] border-2 border-primary avatar ml-2 cursor-pointer"
-                            >
-                                <div className="w-6 md:w-8 rounded-full">
-                                    {currentUser?.photo && (
-                                        <Image height={72} width={72} alt="" src={currentUser?.photo} />
-                                    )}
-                                </div>
-                            </label>
-                            <ul
-                                tabIndex={0}
-                                className="menu menu-compact dropdown-content p-2 shadow-md bg-white font-medium text-neutral rounded-md min-w-max"
-                            >
-                                <li className="cursor-default">
-                                    <p className="cursor-default text-primary hover:text-primary hover:bg-white">
-                                        {currentUser?.name}
-                                    </p>
-                                </li>
-                                {currentUser?.role === "admin" ? (
-                                    <li>
-                                        <Link herf={"/dashboard"}>Dashboard</Link>
-                                    </li>
-                                ) : (
-                                    <li>
-                                        <Link
-                                            href={`/orders/${currentUser.phone}`}
-                                        >
-                                            My Orders
-                                        </Link>
-                                    </li>
-                                )}
-                                <li>
-                                    <Link href="/"
-                                        onClick={() => logout()}
-                                        className="hover:bg-red-500 hover:text-white text-red-500"
-                                    >
-                                        Logout
-                                    </Link>
-                                </li>
-                            </ul>
-                        </div>
-                    ) : (
-                      <li className="ml-2 lg:ml-4 relative inline-block">
-                      <Link className="" href="/login">
-                        <svg
-                          className="h-9 lg:h-10 p-2 text-white"
-                          aria-hidden="true"
-                          focusable="false"
-                          data-prefix="far"
-                          data-icon="user"
-                          role="img"
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 448 512"
-                        >
-                          <path
-                            fill="currentColor"
-                            d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
-                          ></path>
-                        </svg>
+            {currentUser ? (
+              <div className="hidden lg:block dropdown dropdown-hover dropdown-end">
+                <label
+                  tabIndex={0}
+                  className="rounded-full p-[2px] border-2 border-primary avatar ml-2 cursor-pointer"
+                >
+                  <div className="w-6 md:w-8 rounded-full">
+                    {currentUser?.photo && (
+                      <Image
+                        height={72}
+                        width={72}
+                        alt=""
+                        src={currentUser?.photo}
+                      />
+                    )}
+                  </div>
+                </label>
+                <ul
+                  tabIndex={0}
+                  className="menu menu-compact dropdown-content p-2 shadow-md bg-white font-medium text-neutral rounded-md min-w-max"
+                >
+                  <li className="cursor-default">
+                    <p className="cursor-default text-primary hover:text-primary hover:bg-white">
+                      {currentUser?.name}
+                    </p>
+                  </li>
+                  {currentUser?.role === "admin" ? (
+                    <li>
+                      <Link herf={"/dashboard"}>Dashboard</Link>
+                    </li>
+                  ) : (
+                    <li>
+                      <Link href={`/orders/${currentUser.phone}`}>
+                        My Orders
                       </Link>
                     </li>
-                    )}
+                  )}
+                  <li>
+                    <Link
+                      href="/"
+                      onClick={() => logout()}
+                      className="hover:bg-red-500 hover:text-white text-red-500"
+                    >
+                      Logout
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+            ) : (
+              <li className="ml-2 lg:ml-4 relative inline-block">
+                <Link className="" href="/login">
+                  <svg
+                    className="h-9 lg:h-10 p-2 text-white"
+                    aria-hidden="true"
+                    focusable="false"
+                    data-prefix="far"
+                    data-icon="user"
+                    role="img"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 448 512"
+                  >
+                    <path
+                      fill="currentColor"
+                      d="M313.6 304c-28.7 0-42.5 16-89.6 16-47.1 0-60.8-16-89.6-16C60.2 304 0 364.2 0 438.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-25.6c0-74.2-60.2-134.4-134.4-134.4zM400 464H48v-25.6c0-47.6 38.8-86.4 86.4-86.4 14.6 0 38.3 16 89.6 16 51.7 0 74.9-16 89.6-16 47.6 0 86.4 38.8 86.4 86.4V464zM224 288c79.5 0 144-64.5 144-144S303.5 0 224 0 80 64.5 80 144s64.5 144 144 144zm0-240c52.9 0 96 43.1 96 96s-43.1 96-96 96-96-43.1-96-96 43.1-96 96-96z"
+                    ></path>
+                  </svg>
+                </Link>
+              </li>
+            )}
 
             <li className="ml-2 lg:ml-4 relative inline-block">
-              <a className="" href="">
+              <a className="" href="/cart">
                 <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">
-                  12
+                {cartQuantity ?? 0}
                 </div>
                 <svg
                   className="h-9 lg:h-10 p-2 text-white"

@@ -28,7 +28,6 @@ const Home = async () => {
         ></SectionTitle>
      <Wrapper>
      <div className="grid grid-cols-12">
-
        {
         data?.data?.map((product)=>(
           <Product key={product.id} product={product}></Product>
