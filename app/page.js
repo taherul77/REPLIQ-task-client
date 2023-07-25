@@ -12,7 +12,7 @@ const Home = async () => {
   const data = await getProduct();
 
   return (
-    <div>
+    <div className="bg-black">
       <Banner></Banner>
       <Feture></Feture>
       <SectionTitle
