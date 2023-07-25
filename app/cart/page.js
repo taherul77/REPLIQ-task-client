@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 const Cart = () => {
+  
   return (
     <div>
        <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-20">

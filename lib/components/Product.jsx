@@ -1,10 +1,24 @@
+'use client';
 import Image from "next/image";
 import React from "react";
+import { toast } from "react-hot-toast";
+import GetCart from "../helper/getCart";
+import setCart from "../helper/setCart";
 
 const Product = ({product}) => { 
   
     const {name,image,rate,price,discount_price}=product;
-    console.log(product);
+    const AddToCart = (data) => {
+      const cartItem = {
+          data,
+          quantity: 1,
+      };
+      setCart(cartItem);
+      toast.success("Successfully Added")
+  };
+  
+  const { refetch } = GetCart();
+   
   return (
     <>
       <div className="flex col-span-12 md:col-span-6 lg:col-span-4 w-full">
@@ -79,12 +93,13 @@ const Product = ({product}) => {
                   ${price}
                 </span>
               </p>
-              <a
-                href="#"
+              <button
+              
+                onClick={() => {AddToCart(product),refetch()}}
                 className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-gray-100 focus:outline-none focus:ring-4 focus:ring-blue-300"
               >
                 Add to cart
-              </a>
+              </button>
             </div>
           </div>
         </div>
