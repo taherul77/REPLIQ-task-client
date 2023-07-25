@@ -1,5 +1,5 @@
 "use client"
-import { BASE_URL } from '@/lib/helper/BaseURL';
+import { BASE_URL } from '@/lib/cartHelper/BaseURL';
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'

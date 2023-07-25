@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
-import GetCart from "../helper/getCart";
+import GetCart from "../cartHelper/getCart";
 
 const Nav = () => {
   const { currentUser, logout } = useAuth();

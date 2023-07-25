@@ -2,8 +2,8 @@
 import Image from "next/image";
 import React from "react";
 import { toast } from "react-hot-toast";
-import GetCart from "../helper/getCart";
-import setCart from "../helper/setCart";
+import GetCart from "../cartHelper/getCart";
+import setCart from "../cartHelper/setCart";
 
 const Product = ({product}) => { 
   
