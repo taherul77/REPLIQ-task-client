@@ -1,0 +1,109 @@
+[
+  {
+    "name": "Classic Black Sneakers",
+    "image": "https://i.ibb.co/YhF7F0f/domino-164-6w-VEHf-I-unsplash.jpg",
+    "rate": 4.8,
+    "price": 89.99,
+    "description": "Timeless black sneakers for everyday comfort.",
+    "discount_price": 75
+  },
+  {
+    "name": "Casual Slip-Ons",
+    "image": "https://i.ibb.co/3RkDfFS/610-ILk-K-gt-S-SL1500.jpg",
+    "rate": 4.3,
+    "price": 59.99,
+    "description": "Easy-to-wear slip-on shoes for a relaxed look.",
+    "discount_price": 45
+  },
+  {
+    "name": "Chic High Heels",
+    "image": "https://i.ibb.co/swwmp5L/751-NY-v3-600x600.jpg",
+    "rate": 4.7,
+    "price": 149.99,
+    "description": "Elegant high heels for formal occasions.",
+    "discount_price": 120
+  },
+  {
+    "name": "Trendy Platform Sandals",
+    "image": "https://i.ibb.co/511xtk6/AD0671-1.jpg",
+    "rate": 4.6,
+    "price": 79.99,
+    "description": "Stylish platform sandals for a fashionable look.",
+    "discount_price": 65
+  },
+  {
+    "name": "Leather Loafers",
+    "image": "https://i.ibb.co/4WQcZmg/alex-quezada-q-Ay-Ot0a-Gs-Co-unsplash.jpg",
+    "rate": 4.9,
+    "price": 129.99,
+    "description": "Luxurious leather loafers for a sophisticated style.",
+    "discount_price": 105
+  },
+  {
+    "name": "Comfy Flip Flops",
+    "image": "https://i.ibb.co/yX9bTgb/d8316f0d-ed91-42c7-bff9-a6dc78a67cab.jpg",
+    "rate": 4.2,
+    "price": 29.99,
+    "description": "Comfortable flip flops for beach days.",
+    "discount_price": 20
+  },
+  {
+    "name": "Vintage Oxford Shoes",
+    "image": "https://i.ibb.co/sVmV0Qf/FIRST-11-G-787-BLK-MATTLIC-BLU.jpg",
+    "rate": 4.7,
+    "price": 179.99,
+    "description": "Classic oxford shoes with a vintage touch.",
+    "discount_price": 145
+  },
+  {
+    "name": "Winter Boots",
+    "image": "https://i.ibb.co/C2wv2Tq/daniel-storek-JM-q-KEd1-GMI-unsplash.jpg",
+    "rate": 4.8,
+    "price": 159.99,
+    "description": "Sturdy winter boots to keep your feet warm.",
+    "discount_price": 130
+  },
+  {
+    "name": "Suede Ankle Boots",
+    "image": "https://i.ibb.co/N9s0hpP/maksim-larin-NOps-C3n-WTz-Y-unsplash.jpg",
+    "rate": 4.6,
+    "price": 109.99,
+    "description": "Trendy suede ankle boots for a stylish look.",
+    "discount_price": 90
+  },
+  {
+    "name": "Canvas Sneakers",
+    "image": "https://i.ibb.co/Thw1rdY/men-stylish-shoes-500x500.jpg",
+    "rate": 4.4,
+    "price": 69.99,
+    "description": "Casual canvas sneakers for everyday wear.",
+    "discount_price": 55
+  },
+  {
+    "name": "Wedding Pumps",
+    "image": "https://i.ibb.co/cQrK7kT/usama-akram-g3-CMh2nqj-w-unsplash.jpg",
+    "rate": 4.9,
+    "price": 199.99,
+    "description": "Elegant pumps for your special day.",
+    "discount_price": 165
+  },
+  {
+    "name": "Running Trainers",
+    "image": "https://i.ibb.co/DL8X3MR/RUNMAGICA-SHOES-Black-EY2975-01-standard.jpg",
+    "rate": 4.7,
+    "price": 139.99,
+    "description": "Comfortable trainers designed for running enthusiasts.",
+    "discount_price": 110
+  },
+  
+  {
+    "name": "Sneaker Boots",
+    "image": "https://i.ibb.co/LggYkX4/mojtaba-fahiminia-t4g1gct-Aa-Kk-unsplash.jpg",
+    "rate": 4.4,
+    "price": 119.99,
+    "description": "A hybrid of sneakers and boots for a unique look.",
+    "discount_price": 95
+  }
+  
+ 
+]
