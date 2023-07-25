@@ -7,7 +7,7 @@ const Product = ({product}) => {
     console.log(product);
   return (
     <>
-      {/* <div className="flex col-span-12 md:col-span-6 lg:col-span-4 w-full">
+      <div className="flex col-span-12 md:col-span-6 lg:col-span-4 w-full">
         <div className="relative ml-5 me-5 mb-5 w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-md">
          
           
@@ -90,7 +90,7 @@ const Product = ({product}) => {
             </div>
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 };
