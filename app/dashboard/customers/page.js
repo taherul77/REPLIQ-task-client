@@ -50,21 +50,21 @@ const Customers = () => {
                                     <label for="checkbox-table-search-1" className="sr-only">checkbox</label>
                                 </div>
                             </td>
-                            <th scope="row" className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
-                               
-                                01
+                            <th scope="row" className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                                <Image height={100} width={100} src="" alt="iMac Front Image" className="w-auto h-8 mr-3"/>
+                                Apple iMac 27&#34;
                             </th>
                             <td className="px-4 py-2">
-                                <span className="text-xs font-medium px-2 py-0.5 rounded ">Desktop PC</span>
+                                <span className="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded ">Desktop PC</span>
                             </td>
                             <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
-                                <div className="">
-                                    
-                                    +8801710090697
+                                <div className="flex items-center">
+                                    <div className="inline-block w-4 h-4 mr-2 bg-red-700 rounded-full"></div>
+                                    95
                                 </div>
                             </td>
-                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">1.47</td>
-                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">0.47</td>
+                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">1.47</td>
+                            <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">0.47</td>
                             
                         </tr>
                        
