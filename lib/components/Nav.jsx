@@ -132,7 +132,7 @@ const Nav = () => {
                   </li>
                   {currentUser?.role === "admin" ? (
                     <li>
-                      <Link herf={"/dashboard"}>Dashboard</Link>
+                      <Link href={"/dashboard"}>Dashboard</Link>
                     </li>
                   ) : (
                     <li>

@@ -42,7 +42,7 @@ const Cart = () => {
               <div className="mx-auto mt-8 max-w-2xl md:mt-12">
               <div className="bg-white shadow">
                 <div className="px-4 py-6 sm:px-8 sm:py-10">
-                  <div className="flow-root">
+                  <div className="">
                     <ul className="-my-8">
                     {data?.map((item, index) => (
                             <CartItem
