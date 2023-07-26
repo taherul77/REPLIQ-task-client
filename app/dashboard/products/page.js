@@ -7,10 +7,11 @@ import { useEffect, useState } from "react";
 const Products =  () => {
   
     const [data, setData] = useState([]);
-    console.log(data?.length);
+    console.log(data);
 
     useEffect(() => {
-        axios.get(`${BASE_URL}/product/`).then(function (response) {
+        axios.get(`${BASE_URL}/product`)
+        .then(function (response) {
             setData(response?.data?.data);
         });
     }, []);
@@ -77,104 +78,70 @@ const Products =  () => {
                   <th scope="col" className="px-4 py-3">
                     Rating
                   </th>
-                  <th scope="col" className="px-4 py-3">
-                    Last Update
-                  </th>
+                 
                 </tr>
               </thead>
               <tbody>
                
-                  <tr  className="border-b ">
-                    <td className="w-4 px-4 py-3">
-                      <div className="flex items-center">
-                        <input
-                          id="checkbox-table-search-1"
-                          type="checkbox"
-                          onclick="event.stopPropagation()"
-                          className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-blue-600 focus:ring-primary-500"
-                        />
-                        <label
-                          for="checkbox-table-search-1"
-                          className="sr-only"
+                 {
+                    data?.map((product,i)=>
+                        <tr key={i} className="border-b ">
+                        <td className="w-4 px-4 py-3">
+                          <div className="flex items-center">
+                            <input
+                              id="checkbox-table-search-1"
+                              type="checkbox"
+                              onclick="event.stopPropagation()"
+                              className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-blue-600 focus:ring-primary-500"
+                            />
+                            <label
+                              for="checkbox-table-search-1"
+                              className="sr-only"
+                            >
+                              checkbox
+                            </label>
+                          </div>
+                        </td>
+                        <th
+                          scope="row"
+                          className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap "
                         >
-                          checkbox
-                        </label>
-                      </div>
-                    </td>
-                    <th
-                      scope="row"
-                      className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap "
-                    >
-                      <Image
-                        height={100}
-                        width={100}
-                        src=""
-                        alt="iMac Front Image"
-                        className="w-auto h-8 mr-3"
-                      />
-                     a
-                    </th>
-
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                   b
-                    </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      0.47
-                    </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      <div className="flex items-center">
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewbox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewbox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewbox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewbox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <svg
-                          aria-hidden="true"
-                          className="w-5 h-5 text-yellow-400"
-                          fill="currentColor"
-                          viewbox="0 0 20 20"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                        </svg>
-                        <span className="ml-1 text-gray-500 ">5.0</span>
-                      </div>
-                    </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                      Just now
-                    </td>
-                  </tr>
+                          <Image
+                            height={100}
+                            width={100}
+                            src={product?.image}
+                            alt="iMac Front Image"
+                            className="w-auto h-8 mr-3"
+                          />
+                         {product?.name}
+                        </th>
+    
+                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                       {product?.price}
+                        </td>
+                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          {product?.discount_price}
+                        </td>
+                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                          <div className="flex items-center">
+                          <span className="ml-1 text-gray-500 ">{product?.rate}</span>
+                            <svg
+                              aria-hidden="true"
+                              className="w-5 h-5 text-yellow-400"
+                              fill="currentColor"
+                              viewbox="0 0 20 20"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
+                              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                            </svg>
+                            
+                           
+                          </div>
+                        </td>
+                       
+                      </tr>
+                    )
+                 }
              
               </tbody>
             </table>
