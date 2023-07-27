@@ -45,8 +45,7 @@ const Nav = () => {
       <li>
         <Link
           href="/"
-          aria-label="Our ContactPage"
-          title="Our ContactPage"
+         
           className={({ isActive }) =>
             isActive
               ? " border-md rounded-md bg-red-950 text-white"
@@ -81,7 +80,7 @@ const Nav = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-black rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-cyan-40 rounded-box w-52"
           >
             {navItem}
             <li>
