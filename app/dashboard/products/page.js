@@ -3,8 +3,14 @@ import { BASE_URL } from "@/lib/cartHelper/BaseURL";
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 
 const Products =  () => {
+
+    const [isLoading, setIsLoading] = useState(false);
+    const [showModal, setShowModal] = useState(false);
+    const [showDropDown, setShowDropDown] = useState(false);
+    const [selectedItem, setSelectedItem] = useState(null);
   
     const [data, setData] = useState([]);
     console.log(data);
@@ -15,6 +21,56 @@ const Products =  () => {
             setData(response?.data?.data);
         });
     }, []);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const description = form.description.value;
+       
+        const rate = form.rate.value;
+        const image = form.image.value;
+        const price = form.price.value;
+        const discount_price = form.discount_price.value;
+
+
+        const data = {
+            name,
+            description,
+            rate,
+            image,
+            price,
+            discount_price,
+        };
+
+        const token = localStorage.getItem("accessToken");
+
+        setIsLoading(true);
+
+        try {
+            const response = await fetch(`${BASE_URL}/product/create`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    Authorization: `Bearer ${token}`,
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                toast.success("Product Created Successful");
+                setShowModal(false);
+                setTimeout(() => window.location.reload(), 2000);
+                console.log("Menu item created successfully!");
+            } else {
+                console.error("Failed to create menu item:", response.status);
+            }
+        } catch (error) {
+            console.error("An error occurred:", error);
+        }
+
+        setIsLoading(false);
+    };
 
   return (
     <section className="py-3 sm:py-5">
@@ -29,6 +85,7 @@ const Products =  () => {
             </div>
             <div className="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
               <button
+               onClick={() => setShowModal(true)}
                 type="button"
                 className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300focus:outline-none dark:focus:ring-primary-800"
               >
@@ -116,13 +173,13 @@ const Products =  () => {
                          {product?.name}
                         </th>
     
-                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
                        ${product?.price}
                         </td>
                         <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                           ${product?.discount_price}
                         </td>
-                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
                           <div className="flex items-center">
                           <span className="ml-1 text-gray-500 ">{product?.rate}</span>
                             <svg
@@ -146,6 +203,92 @@ const Products =  () => {
               </tbody>
             </table>
           </div>
+
+
+          {showModal ? (
+                <>
+                    <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none">
+                        <div className="relative w-auto my-6 mx-auto max-w-3xl">
+                            {/*content*/}
+                            <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
+                                {/*header*/}
+                                <div className="flex items-center justify-center p-5 rounded-t">
+                                    <h3 className="text-3xl text-center font-semibold">
+                                        Create Product
+                                    </h3>
+                                    <button
+                                        onClick={() => {
+                                            setShowModal(false),
+                                                setShowDropDown(false);
+                                        }}
+                                        className="btn btn-sm btn-circle btn-ghost absolute right-4 top-4"
+                                    >
+                                        ✕
+                                    </button>
+                                </div>
+                                {/*body*/}
+                                <form
+                                    className="p-10 pt-0"
+                                    onSubmit={handleSubmit}
+                                >
+                                    <div className="space-y-4 my-5">
+                                        <input
+                                            placeholder="Name"
+                                            name="name"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                        <input
+                                            placeholder="Description"
+                                            name="description"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                        <input
+                                            placeholder="Rating"
+                                            name="rate"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                        <input
+                                            placeholder="Image URL"
+                                            name="image"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                        
+
+                                        <input
+                                            placeholder="Price"
+                                            name="price"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                        <input
+                                            placeholder="Discount Price"
+                                            name="discount_price"
+                                            className="input input-bordered input-md rounded-md w-full"
+                                        />
+                                    </div>
+
+                                    <button
+                                        disabled={isLoading}
+                                        type="submit"
+                                        className={
+                                            "w-full font-bold disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white"
+                                        }
+                                    >
+                                        {isLoading ? (
+                                            <div className="flex justify-center">
+                                                .....
+                                            </div>
+                                        ) : (
+                                            "Create Product"
+                                        )}
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
+                </>
+            ) : null}
+
         </div>
       </div>
     </section>

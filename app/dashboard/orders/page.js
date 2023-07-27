@@ -82,7 +82,7 @@ const Orders = () => {
                       Paid
                     </td>
                     <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
-                      {order?.createdAt}
+                      {order?.createdAt.slice(0,10)}
                     </td>
                   </tr>
                 ))}

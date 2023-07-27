@@ -8,7 +8,7 @@ import React from "react";
 const Checkout = () => {
   const { currentUser } = useAuth();
   const { data } = GetCart();
-  const { subtotal, shipping, tax, total } = calculateTotal(data);
+  const { subtotal, shipping,  total } = calculateTotal(data);
 
   const handleSubmit = async (event) => {
     event.preventDefault();

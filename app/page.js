@@ -10,6 +10,7 @@ import PaymentWay from "@/lib/components/PaymentWay";
 
 const Home = async () => {
   const data = await getProduct();
+  console.log(data);
 
   return (
     <div>

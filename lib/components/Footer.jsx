@@ -1,8 +1,11 @@
+"use client"
+import { usePathname } from 'next/navigation'
 import React from 'react'
 
 const Footer = () => {
+  const pathname=usePathname();
   return (
-    <div>
+    <div className={`${pathname=== '/cart' && 'hidden'}`}>
       <div className="bg-black">
       <div className="px-4 mx-auto ">
         <div className="flex flex-col justify-between p-10 border-t sm:flex-row">

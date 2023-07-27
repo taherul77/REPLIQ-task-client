@@ -13,7 +13,7 @@ const Cart = () => {
 
   return (
     <div>
-       <section className="h-screen bg-gray-100 py-12 sm:py-16 lg:py-32">
+       <section className="h-auto bg-gray-100 py-12 sm:py-16 lg:py-32">
       <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-center">
           <h1 className="text-3xl font-semibold text-gray-900">Your Cart</h1>
@@ -76,7 +76,7 @@ const Cart = () => {
                     <Link href="/cart/checkout">
                     <button
                       type="button"
-                      className="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-gray-800"
+                      className="group inline-flex w-full items-center justify-center rounded-md bg-gray-900 px-6 py-4 text-lg font-semibold text-white transition-all duration-200 ease-in-out focus:shadow hover:bg-yellow-800"
                     >
                       Checkout
                       <svg
