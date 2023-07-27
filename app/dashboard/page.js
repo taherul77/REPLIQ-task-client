@@ -23,7 +23,14 @@ const Dashboard =  () => {
         });
     }, []);
   return (
-    <div>
+    <div className="">
+        <h2>
+            welcome to Dashboard
+        </h2>
+
+
+
+
     <p className="text-3xl md:text-4xl mb-5 font-black leading-10 text-center md:text-left">
         Summary
     </p>

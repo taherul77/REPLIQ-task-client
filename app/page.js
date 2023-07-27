@@ -13,7 +13,7 @@ const Home = async () => {
   console.log(data);
 
   return (
-    <div>
+    <div className="bg-white">
       <Banner></Banner>
       <PaymentWay></PaymentWay>
       <SectionTitle

@@ -1,11 +1,12 @@
 "use client";
-import Nav from "@/lib/components/Nav";
+
 import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/lib/components/Footer";
 import { AuthProvider } from "@/lib/context/AuthProvider";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { Toaster } from "react-hot-toast";
+import Nav from "@/lib/components/Nav";
 
 const inter = Inter({ subsets: ["latin"] });
 const queryClient = new QueryClient();
