@@ -168,7 +168,7 @@ const Navbar = () => {
 
             <li className="ml-2 lg:ml-4 relative inline-block">
               <a className="" href="/cart">
-                <div className="absolute -top-1 right-0 z-10 bg-black text-xs font-bold px-1 py-0.5 rounded-full">
+                <div className="absolute -top-1 right-0 z-10 bg-yellow-500 text-xs font-bold px-1 py-0.5 rounded-full">
                 {cartQuantity ?? 0}
                 </div>
                 <svg
