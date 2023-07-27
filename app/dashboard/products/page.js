@@ -79,7 +79,7 @@ const Products =  () => {
           <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
             <div className="flex items-center flex-1 space-x-4">
               <h5>
-                <span className="text-gray-500">All Products:</span>
+                <span className="text-gray-500">All Products : </span>
                 <span className="dark:text-white">{data?.length}</span>
               </h5>
             </div>
@@ -173,13 +173,13 @@ const Products =  () => {
                          {product?.name}
                         </th>
     
-                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                        <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                        ${product?.price}
                         </td>
-                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                        <td className="px-4 py-2 font-medium text-black whitespace-nowrap">
                           ${product?.discount_price}
                         </td>
-                        <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                        <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                           <div className="flex items-center">
                           <span className="ml-1 text-gray-500 ">{product?.rate}</span>
                             <svg

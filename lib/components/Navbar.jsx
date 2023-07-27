@@ -5,9 +5,10 @@ import React, { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import GetCart from "../cartHelper/getCart";
 
-const Nav = () => {
+const Navbar = () => {
   const { currentUser, logout } = useAuth();
   const { data } = GetCart();
+  const {active,setActive}=useState('/');
 
   const cartQuantity = data?.length;
 
@@ -18,39 +19,31 @@ const Nav = () => {
           href="/"
           aria-label="Our HomePage"
           title="Our HomePage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
+         className={`${active=== "/" ? "underline  text-white" : ""}`}
+         onclick={()=>setActive("/")}
         >
           HOME
         </Link>
       </li>
 
+
       <li>
         <Link
-          href="/"
+          href="/shop"
           aria-label="Our ShopPage"
           title="Our ShopPage"
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
+          className={`${active=== "/shop" ? "underline text-white" : ""}`}
+          onclick={()=>setActive("/shop")}
         >
           OUR SHOP
         </Link>
       </li>
       <li>
         <Link
-          href="/"
+          href="/contact"
          
-          className={({ isActive }) =>
-            isActive
-              ? " border-md rounded-md bg-red-950 text-white"
-              : "font-medium  text-white"
-          }
+          className={`${active=== "/contact" ? "underline text-white" : ""}`}
+          onclick={()=>setActive("/contact")}
         >
           CONTACT US
         </Link>
@@ -80,13 +73,13 @@ const Nav = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-cyan-40 rounded-box w-52"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-cyan- rounded-box w-52"
           >
             {navItem}
             <li>
               <Link
                 href="/login"
-                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md   bg-fuchsia-900  hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50"
+                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md   bg-black  hover:bg-yellow-400 focus:outline-none focus:ring focus:ring-yellow-300 focus:ring-opacity-50"
                 aria-label="login"
                 title="login"
               >
@@ -95,7 +88,7 @@ const Nav = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl">Amar Shop</a>
+        <Image height={150} width={150} className="ml-10 h-16 w-50" src='https://i.ibb.co/sH6kBqH/Shopping-Bag-Online-Market-Logo-removebg-preview-1.png' alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItem}</ul>
@@ -175,7 +168,7 @@ const Nav = () => {
 
             <li className="ml-2 lg:ml-4 relative inline-block">
               <a className="" href="/cart">
-                <div className="absolute -top-1 right-0 z-10 bg-yellow-400 text-xs font-bold px-1 py-0.5 rounded-sm">
+                <div className="absolute -top-1 right-0 z-10 bg-black text-xs font-bold px-1 py-0.5 rounded-full">
                 {cartQuantity ?? 0}
                 </div>
                 <svg
@@ -198,74 +191,10 @@ const Nav = () => {
           </ul>
         </nav>
 
-        {/* <Link href="/">
-      <div className="dropdown dropdown-end">
-        <label tabIndex={0} className="btn btn-ghost btn-circle">
-          <div className="indicator text-2xl">
-           <FaShoppingCart></FaShoppingCart>
-            
-            <span className="badge badge-sm indicator-item">+{cart?.length || 0}</span>
-          </div>
-        </label>
       
-      </div>
-      
-      </Link> */}
-
-        {/* <>
-          <div className="dropdown dropdown-hover dropdown-end">
-            <label
-              tabIndex={0}
-              className="btn btn-ghost btn-circle border-2 border-primary avatar ml-2"
-            >
-              <div className="w-10 rounded-full">
-                {user?.photoURL ? (
-                  <img alt="" src={user.photoURL} />
-                ) : (
-                  <img
-                    alt=""
-                    src="https://i.ibb.co/VvZScTP/blank-avatar.png"
-                  />
-                )}
-              </div>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-compact dropdown-content p-2 shadow  border rounded-md w-52"
-            >
-              <li>
-                <Link href='/'>Name</Link>
-              </li>
-              <li>
-                <Link href=''>Dashboard</Link>
-              </li>
-              <li>
-                <Link href='' >Profile</Link>
-              </li>
-              <li>
-                <Link href='' onClick={signOut}>Logout</Link>
-              </li>
-            </ul>
-          </div>
-        </>
-     
-        <>
-          <ul className="col-span-3 justify-end items-center hidden space-x-8 lg:flex">
-            <li>
-              <Link
-                href="/"
-                className="px-6 py-2 font-bold text-cyan-50 border-md rounded-md bg-[#D99904]"
-                aria-label="login"
-                title="login"
-              >
-                login
-              </Link>
-            </li>
-          </ul>
-        </> */}
       </div>
     </div>
   );
 };
 
-export default Nav;
+export default Navbar;

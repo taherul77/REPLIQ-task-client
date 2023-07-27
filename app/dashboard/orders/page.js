@@ -16,11 +16,11 @@ const Orders = () => {
     <section className="py-3 sm:py-5">
       <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div className="relative overflow-hidden bg-white shadow-md sm:rounded-lg">
-          <div className="flex flex-col px-4 py-3 bg-gray-50 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+          <div className="flex flex-col px-4 py-3  space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
             <div className="flex items-center flex-1 space-x-4">
               <h5>
-                <span className="text-gray-500">All User:</span>
-                <span className="dark:text-white">{data?.length}</span>
+                <span className="text-black">All Orders : </span>
+                <span className="text-black">{data?.length}</span>
               </h5>
             </div>
           </div>
@@ -56,32 +56,32 @@ const Orders = () => {
                   <tr key={index} className="border-b ">
                     <th
                       scope="row"
-                      className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap "
+                      className="flex items-center px-4 py-2 font-medium text-black whitespace-nowrap "
                     >
                       {order?.tranId}
                     </th>
                     <td className="px-4 py-2">
-                      <span className="bg-primary-100 text-primary-800 line-clamp-1 text-xs font-medium px-2 py-0.5 rounded ">
+                      <span className="bg-primary-100 text-black line-clamp-1 text-xs font-medium px-2 py-0.5 rounded ">
                         {order?.data?.name}
                       </span>
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       <div className="flex items-center">
                         <div className="inline-block  rounded-full"></div>
                         {order?.data?.price}
                       </div>
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       {order?.name}
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       {order?.phone}
                     </td>
                   
-                    <td className="flex items-center justify-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="flex items-center justify-center px-4 py-2 font-medium text-black whitespace-nowrap ">
                       Paid
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       {order?.createdAt.slice(0,10)}
                     </td>
                   </tr>

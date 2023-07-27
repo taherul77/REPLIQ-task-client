@@ -72,11 +72,11 @@ const Customers = () => {
     <section className="py-3 sm:py-5">
       <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div className="relative overflow-hidden bg-white shadow-md sm:rounded-lg">
-          <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
+          <div className="flex flex-col px-4 py-3  space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
             <div className="flex items-center flex-1 space-x-4">
               <h5>
-                <span className="text-gray-500">All User:</span>
-                <span className="dark:text-white">{data?.length}</span>
+                <span className="text-black">All Customers : </span>
+                <span className="text-black">{data?.length}</span>
               </h5>
             </div>
             <div className="flex flex-col flex-shrink-0 space-y-3 md:flex-row md:items-center lg:justify-end md:space-y-0 md:space-x-3">
@@ -106,18 +106,7 @@ const Customers = () => {
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
               <thead className="text-xs text-gray-700 uppercase bg-gray-50 ">
                 <tr>
-                  <th scope="col" className="p-4">
-                    <div className="flex items-center">
-                      <input
-                        id="checkbox-all"
-                        type="checkbox"
-                        className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-primary-600 focus:ring-primary-500 "
-                      />
-                      <label for="checkbox-all" className="sr-only">
-                        checkbox
-                      </label>
-                    </div>
-                  </th>
+                  
                   <th scope="col" className="px-4 py-3">
                     SL N0
                   </th>
@@ -138,22 +127,7 @@ const Customers = () => {
               <tbody>
                 {data.map((user, index) => (
                   <tr key={index} className="border-b ">
-                    <td className="w-4 px-4 py-3">
-                      <div className="flex items-center">
-                        <input
-                          id="checkbox-table-search-1"
-                          type="checkbox"
-                          onclick="event.stopPropagation()"
-                          className="w-4 h-4 bg-gray-100 border-gray-300 rounded text-blue-600 focus:ring-primary-500"
-                        />
-                        <label
-                          for="checkbox-table-search-1"
-                          className="sr-only"
-                        >
-                          checkbox
-                        </label>
-                      </div>
-                    </td>
+                    
                     <th
                       scope="row"
                       className="flex items-center px-4 py-2 font-medium text-gray-900 whitespace-nowrap "
@@ -161,20 +135,20 @@ const Customers = () => {
                       {index + 1}
                     </th>
                     <td className="px-4 py-2">
-                      <span className="bg-primary-100 text-primary-800 text-xs font-medium px-2 py-0.5 rounded ">
+                      <span className="bg-primary-100 text-black text-xs font-medium px-2 py-0.5 rounded ">
                         {user?.name}
                       </span>
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap ">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       <div className="flex items-center">
                         <div className="inline-block  rounded-full"></div>
                         {user?.phone}
                       </div>
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       {user?.role}
                     </td>
-                    <td className="px-4 py-2 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    <td className="px-4 py-2 font-medium text-black whitespace-nowrap ">
                       {user?.updatedAt}
                     </td>
                   </tr>

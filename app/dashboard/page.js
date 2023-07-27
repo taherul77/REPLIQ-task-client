@@ -32,7 +32,7 @@ const Dashboard = () => {
         Summary
       </p>
       <div className="flex flex-col md:flex-row justify-between items-center gap-5">
-        <div className="mt-4 w-full lg:p-10">
+        <div className="mt-2 w-full lg:p-10">
           <div className="relative flex flex-col bg-white rounded mb-3 xl:mb-0 shadow-lg">
             <div className="flex-auto p-4">
               <div className="flex flex-wrap">
@@ -55,7 +55,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className=" mt-4 w-full lg:p-10">
+        <div className=" mt-2 w-full lg:p-10">
           <div className="relative flex flex-col bg-white rounded mb-4 xl:mb-0 shadow-lg">
             <div className="flex-auto p-4">
               <div className="flex flex-wrap">
@@ -78,7 +78,7 @@ const Dashboard = () => {
           </div>
         </div>
 
-        <div className="mt-4 w-full lg:p-10">
+        <div className="mt-2 w-full lg:p-10">
           <div className="relative flex flex-col bg-white rounded mb-6 xl:mb-0 shadow-lg">
             <div className="flex-auto p-4">
               <div className="flex flex-wrap">
