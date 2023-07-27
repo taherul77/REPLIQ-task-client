@@ -253,12 +253,12 @@ const Customers = () => {
                                         
                                         type="submit"
                                         className={
-                                            "w-full font-bold disabled:opacity-50 disabled:cursor-not-allowed bg-primary text-white"
+                                            "flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-800"
                                         }
                                     >
                                         {isLoading ? (
                                             <div className="flex justify-center">
-                                                {/* <Spinnaker /> */}
+                                               ...
                                             </div>
                                         ) : (
                                             "Create Customer"
