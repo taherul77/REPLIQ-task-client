@@ -19,25 +19,24 @@ const Cart = () => {
           <h1 className="text-3xl font-semibold text-gray-900">Your Cart</h1>
         </div>
         {!data || data?.length === 0 ? (
-                <div className="h-[calc(100vh-10rem)] flex justify-center items-center">
-                    <div>
-                        <h1 className="text-3xl md:text-5xl font-black text-center leading-10 uppercase">
-                            No item available
-                        </h1>
-                        <Link
-                            href={"/"}
-                            className="flex items-center justify-center gap-2 mt-5 lg:mt-10 cursor-pointer"
-                        >
-                            <button
-                                className={
-                                    "rounded-md bg-neutral p-2 text-white md:text-xl uppercase"
-                                }
-                            >
-                                Order some Product
-                            </button>
-                        </Link>
-                    </div>
-                </div>
+               
+                 <div className="h-[calc(100vh-10rem)] flex justify-center items-center">
+                 <div>
+                   <h1 className="text-3xl md:text-5xl font-black text-center text-black leading-10 uppercase">
+                     No Product available
+                   </h1>
+                   <Link
+                     href={"/shop"}
+                     className="flex items-center justify-center gap-2 mt-5 lg:mt-10 cursor-pointer"
+                   >
+                     <button
+                       className={"flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-800"}
+                     >
+                       Continue Shipping
+                     </button>
+                   </Link>
+                 </div>
+               </div>
             ) : (
               <div className="mx-auto mt-8 max-w-2xl md:mt-12">
               <div className="bg-white shadow">

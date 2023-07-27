@@ -37,7 +37,7 @@ const Product = ({product}) => {
               </h5>
             </a>
             <div className="mt-2.5 mb-5 flex items-center">
-              <span className="mr-2 rounded bg-yellow-200 px-2.5 py-0.5 text-xs font-semibold">
+              <span className="mr-2 rounded bg-yellow-200 text-black px-2.5 py-0.5 text-xs font-semibold">
                 {rate}
               </span>
               <svg
