@@ -47,12 +47,12 @@ const Login = () => {
   };
 
   return (
-    <div className=" login-item hero min-h-screen bg-base-200">
+    <div className=" login-item hero min-h-screen bg-white">
         <div className="hero-content   flex-col lg:flex-row">
           <div className="mr-12 w-1/2">
             <Image height={500} width={500} src="https://i.ibb.co/6tx9hS8/16292986-beautifulwoman-114-removebg.png" alt="" />
           </div>
-          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+          <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-white">
             <div>
               <div className="p-8 space-y-3 rounded-xl  text-neutral">
                 <h1 className="text-2xl font-bold text-center">Login</h1>
@@ -92,7 +92,7 @@ const Login = () => {
                       type="text"
                       name="phone"
                       placeholder="Phone Number"
-                      className="w-full px-4 py-3 rounded-md border border-gray-700  text-neutral"
+                      className="w-full px-4 py-3 bg-white rounded-md border border-black text-neutral"
                       required
                     />
                   </div>
@@ -105,7 +105,7 @@ const Login = () => {
                       name="password"
                       id="password"
                       placeholder="Password"
-                      className="w-full px-4 py-3 rounded-md border border-gray-700  text-neutral"
+                      className="w-full px-4 py-3 bg-white rounded-md border border-black  text-neutral"
                       required
                     />
                     
