@@ -164,7 +164,7 @@ const Customers = () => {
                             <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-full bg-white outline-none focus:outline-none">
                                 {/*header*/}
                                 <div className="flex items-center justify-center p-5 rounded-t">
-                                    <h3 className="text-3xl text-center font-semibold">
+                                    <h3 className="text-3xl text-black text-center font-semibold">
                                         Create Customer
                                     </h3>
                                     <button
@@ -208,17 +208,17 @@ const Customers = () => {
                                         <input
                                             placeholder="Name"
                                             name="name"
-                                            className="input input-bordered input-md rounded-md w-full"
+                                            className="input input-bordered bg-white input-md rounded-md w-full"
                                         />
                                         <input
                                             placeholder="Phone"
                                             name="phone"
-                                            className="input input-bordered input-md rounded-md w-full"
+                                            className="input input-bordered bg-white input-md rounded-md w-full"
                                         />
                                         <input
                                             placeholder="Password"
                                             name="password"
-                                            className="input input-bordered input-md rounded-md w-full"
+                                            className="input input-bordered bg-white input-md rounded-md w-full"
                                         />
                                     </div>
 
