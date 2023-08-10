@@ -43,8 +43,8 @@ const Register = () => {
                 if (data?.success) {
                     form.reset();
                     setError("");
-                    toast.success("Login successful");
-                    router.push("/")
+                    toast.success("Register successful please log in");
+                    router.push("/login")
                 } else {
                     setError(data?.message);
                     toast.error(data?.message);
@@ -135,7 +135,7 @@ const Register = () => {
                     type="submit"
                     className="block w-full p-3 text-center px-6 py-2 font-bold text-cyan-50 border-md rounded-md  bg-yellow-500"
                   >
-                    Log in
+                    Register
                   </button>
                 </form>
                

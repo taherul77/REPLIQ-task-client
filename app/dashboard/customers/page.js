@@ -69,6 +69,10 @@ const Customers = () => {
 };
 
   return (
+    <div>
+       <p className="flex text-2xl md:text-3xl mt-5 text-gray-600 uppercase font-medium leading-10 text-center justify-center md:text-left">
+        Customers
+      </p>
     <section className="py-3 sm:py-5">
       <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div className="relative overflow-hidden bg-white shadow-md sm:rounded-lg">
@@ -83,7 +87,7 @@ const Customers = () => {
               <button
               onClick={() => setShowModal(true)}
                 type="button"
-                className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:bg-blue-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800"
+                className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-800 "
               >
                 <svg
                   className="h-3.5 w-3.5 mr-2"
@@ -248,6 +252,7 @@ const Customers = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

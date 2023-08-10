@@ -70,7 +70,7 @@ const Checkout = () => {
               </div>
               <div class="mt-8 flex flex-col justify-start items-start w-full space-y-8">
                 <input
-                  class="px-2  text-black py-4 w-full"
+                  class="px-2  text-black rounded-md  py-4 w-full"
                   required={true}
                   disabled
                   readOnly
@@ -80,7 +80,7 @@ const Checkout = () => {
                 />
 
                 <input
-                  class=" px-2 border-b text-black py-4 w-full"
+                  class=" px-2 border-b text-black rounded-md py-4 w-full"
                   required={true}
                   readOnly
                   disabled
@@ -89,7 +89,7 @@ const Checkout = () => {
                   name="phone"
                 />
                 <input
-                  class="px-2 text-black bg-gray-100 py-4 w-full"
+                  class="px-2 text-black rounded-md bg-gray-100 py-4 w-full"
                   required={true}
                   type="text"
                   name="address"
@@ -98,7 +98,7 @@ const Checkout = () => {
               </div>
               <button
                 type={"submit"}
-                class="mt-8  font-medium focus:ring-2   hover:bg-yellow-700 py-4 w-full md:w-4/12 lg:w-full text-white bg-black"
+                class="mt-8  font-medium focus:ring-2 rounded-md   hover:bg-yellow-700 py-4 w-full md:w-4/12 lg:w-full text-white bg-black"
               >
                 Proceed to payment
               </button>

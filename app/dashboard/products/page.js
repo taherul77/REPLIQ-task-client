@@ -10,7 +10,7 @@ const Products =  () => {
     const [isLoading, setIsLoading] = useState(false);
     const [showModal, setShowModal] = useState(false);
     const [showDropDown, setShowDropDown] = useState(false);
-    const [selectedItem, setSelectedItem] = useState(null);
+    
   
     const [data, setData] = useState([]);
     console.log(data);
@@ -73,7 +73,12 @@ const Products =  () => {
     };
 
   return (
+    <div>
+       <p className="flex text-2xl md:text-3xl mt-5 text-gray-600 uppercase font-medium leading-10 text-center justify-center md:text-left">
+        Product
+      </p>
     <section className="py-3 sm:py-5">
+      
       <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div className="relative overflow-hidden bg-white shadow-md sm:rounded-lg">
           <div className="flex flex-col px-4 py-3 space-y-3 lg:flex-row lg:items-center lg:justify-between lg:space-y-0 lg:space-x-4">
@@ -87,7 +92,7 @@ const Products =  () => {
               <button
                onClick={() => setShowModal(true)}
                 type="button"
-                className="flex items-center justify-center px-4 py-2 text-sm font-medium text-white rounded-lg bg-blue-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300focus:outline-none dark:focus:ring-primary-800"
+                className="flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-800 "
               >
                 <svg
                   className="h-3.5 w-3.5 mr-2"
@@ -266,6 +271,7 @@ const Products =  () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 

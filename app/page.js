@@ -15,14 +15,8 @@ const Home = async () => {
   return (
     <div className="bg-white">
       <Banner></Banner>
-      <PaymentWay></PaymentWay>
-      <SectionTitle
-          SubHeading={"OUR PRODUCT"}
-          heading={"GALLERY"}
-        ></SectionTitle>
-        <Wrapper>
-        <Gallery></Gallery>
-        </Wrapper>
+      
+     
       <SectionTitle
           SubHeading={"MOST POPULAR"}
           heading={"PRODUCT"}
@@ -37,7 +31,14 @@ const Home = async () => {
       </div>
      
      </Wrapper>
-    
+     <SectionTitle
+          SubHeading={"OUR PRODUCT"}
+          heading={"GALLERY"}
+        ></SectionTitle>
+        <Wrapper>
+        <Gallery></Gallery>
+        </Wrapper>
+        <PaymentWay></PaymentWay>
     </div>
   );
 };

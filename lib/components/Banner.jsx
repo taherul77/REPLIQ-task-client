@@ -13,8 +13,6 @@ import image6 from "../../public/Banner6.jpg"
 import Image from "next/image";
 
 
-
-
 const Banner = () => {
   return (
     <div className="relative text-white text-[20px] w-full mx-auto">
@@ -28,7 +26,7 @@ const Banner = () => {
         renderArrowPrev={(clickHandler, hasPrev) => (
             <div
                 onClick={clickHandler}
-                className="absolute right-[31px] md:right-[51px] bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-black z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+                className="absolute right-[31px] md:right-[51px] bottom-4 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-black z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
                 <BiArrowBack className="text-sm md:text-lg" />
             </div>
@@ -36,7 +34,7 @@ const Banner = () => {
         renderArrowNext={(clickHandler, hasNext) => (
             <div
                 onClick={clickHandler}
-                className="absolute right-0 bottom-0 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-black z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
+                className="absolute right-0 bottom-4 w-[30px] md:w-[50px] h-[30px] md:h-[50px] bg-black z-10 flex items-center justify-center cursor-pointer hover:opacity-90"
             >
                 <BiArrowBack className="rotate-180 text-sm md:text-lg" />
             </div>

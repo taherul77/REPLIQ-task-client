@@ -4,6 +4,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { useAuth } from "../context/AuthProvider";
 import GetCart from "../cartHelper/getCart";
+import logo from "../../public/logo.png"
 
 const Navbar = () => {
   const { currentUser, logout } = useAuth();
@@ -41,7 +42,6 @@ const Navbar = () => {
       <li>
         <Link
           href="/contact"
-         
           className={`${active=== "/contact" ? "underline text-white" : ""}`}
           onclick={()=>setActive("/contact")}
         >
@@ -88,14 +88,37 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <Image height={150} width={150} className="ml-10 h-16 w-50" src='https://i.ibb.co/sH6kBqH/Shopping-Bag-Online-Market-Logo-removebg-preview-1.png' alt="" />
+        <Link href="/"><Image height={80} width={150} className="ml-2 h-16 w-auto" src={logo} alt="" /></Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{navItem}</ul>
       </div>
       <div className="navbar-end gap-4 mr-4">
         <nav className="contents">
+          
           <ul className="ml-4 xl:w-48 flex items-center justify-end">
+          <li className="ml-2 lg:ml-4 relative inline-block">
+              <Link className="" href="/cart">
+                <span className="absolute -top-1 right-0 z-10 bg-yellow-500 text-xs font-bold px-1  rounded-full">
+                {cartQuantity ?? 0}
+                </span>
+                <svg
+                  className="h-9 lg:h-10 p-2 text-white"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="far"
+                  data-icon="shopping-cart"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 576 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0 5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144 430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142-29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216-208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"
+                  ></path>
+                </svg>
+              </Link>
+            </li>
             {currentUser ? (
               <div className="hidden lg:block dropdown dropdown-hover dropdown-end">
                 <label
@@ -127,11 +150,7 @@ const Navbar = () => {
                       <Link href={"/dashboard"}>Dashboard</Link>
                     </li>
                   ) : (
-                    <li>
-                      <Link href={`/orders/${currentUser.phone}`}>
-                        My Orders
-                      </Link>
-                    </li>
+                   <></>
                   )}
                   <li>
                     <Link
@@ -166,28 +185,7 @@ const Navbar = () => {
               </li>
             )}
 
-            <li className="ml-2 lg:ml-4 relative inline-block">
-              <a className="" href="/cart">
-                <div className="absolute -top-1 right-0 z-10 bg-yellow-500 text-xs font-bold px-1 py-0.5 rounded-full">
-                {cartQuantity ?? 0}
-                </div>
-                <svg
-                  className="h-9 lg:h-10 p-2 text-white"
-                  aria-hidden="true"
-                  focusable="false"
-                  data-prefix="far"
-                  data-icon="shopping-cart"
-                  role="img"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 576 512"
-                >
-                  <path
-                    fill="currentColor"
-                    d="M551.991 64H144.28l-8.726-44.608C133.35 8.128 123.478 0 112 0H12C5.373 0 0 5.373 0 12v24c0 6.627 5.373 12 12 12h80.24l69.594 355.701C150.796 415.201 144 430.802 144 448c0 35.346 28.654 64 64 64s64-28.654 64-64a63.681 63.681 0 0 0-8.583-32h145.167a63.681 63.681 0 0 0-8.583 32c0 35.346 28.654 64 64 64 35.346 0 64-28.654 64-64 0-18.136-7.556-34.496-19.676-46.142l1.035-4.757c3.254-14.96-8.142-29.101-23.452-29.101H203.76l-9.39-48h312.405c11.29 0 21.054-7.869 23.452-18.902l45.216-208C578.695 78.139 567.299 64 551.991 64zM208 472c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm256 0c-13.234 0-24-10.766-24-24s10.766-24 24-24 24 10.766 24 24-10.766 24-24 24zm23.438-200H184.98l-31.31-160h368.548l-34.78 160z"
-                  ></path>
-                </svg>
-              </a>
-            </li>
+           
           </ul>
         </nav>
 

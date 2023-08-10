@@ -32,7 +32,7 @@ const Cart = () => {
                      <button
                        className={"flex items-center rounded-md bg-slate-900 px-5 py-2.5 text-center text-sm font-medium text-white hover:bg-yellow-800"}
                      >
-                       Continue Shipping
+                       Continue Shopping
                      </button>
                    </Link>
                  </div>

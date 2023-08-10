@@ -13,6 +13,10 @@ const Orders = () => {
     });
   }, []);
   return (
+    <div>
+       <p className="flex text-2xl md:text-3xl mt-5 text-gray-600 uppercase font-medium leading-10 text-center justify-center md:text-left">
+        Orders
+      </p>
     <section className="py-3 sm:py-5">
       <div className="px-4 mx-auto max-w-screen-2xl lg:px-12">
         <div className="relative overflow-hidden bg-white shadow-md sm:rounded-lg">
@@ -92,6 +96,7 @@ const Orders = () => {
         </div>
       </div>
     </section>
+    </div>
   );
 };
 
